@@ -19,3 +19,5 @@ app.listen(port,()=>{
 app.use("/users",userRoutes)
 app.use("/products",productRoutes)
 app.use("/cart",cartRoutes)
+
+export default app;

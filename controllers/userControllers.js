@@ -5,11 +5,11 @@ import bcrypt from "bcrypt";
 
 //Register a user
 const registerUser=expressAsyncHandler(async(req,res)=>{
-    var {username,place,email,contact,password}=req.body;
+    var {username,email,password}=req.body;
     const hashedPassword=await bcrypt.hash(password,10);
     password=hashedPassword
 
-    const regUser=await user.create({username,place,email,contact,password})
+    const regUser=await user.create({username,email,password})
     res.status(201).json(regUser);
 })
 
